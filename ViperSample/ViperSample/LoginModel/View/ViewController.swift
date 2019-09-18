@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     var loginCon = LoginConstant()
     override func viewDidLoad() {
         super.viewDidLoad()
-        LoginConstant.userName = "versionswift15@gmail.com"
+        LoginConstant.userName = "123@gmail.com"
         LoginConstant.password = "test@123"
         presenter?.updateView()
 

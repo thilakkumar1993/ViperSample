@@ -9,5 +9,5 @@
 import Foundation
 
 class URLManager {
-    public static let loginUrl = "http://3.16.15.122:8080/v1/authenticate/login?role=user"
+    public static let loginUrl = "www.google.com"
 }
