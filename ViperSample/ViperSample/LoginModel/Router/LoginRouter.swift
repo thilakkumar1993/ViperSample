@@ -9,18 +9,30 @@
 import Foundation
 import UIKit
 class LoginRouter: PresenterToRouterProtocal {
-    static func createModule() -> UIViewController {
-        let view = mainStoryBoard.instantiateViewController(withIdentifier: "ViewController") as? ViewController
+    static func createLoginModule(loginRef: LoginViewController) {
         let presenter: ViewToPresenterProtocal & InteractorToPresenterProtocal = LoginPresenter()
-        let Interactor: PresenterToInteractorProtocal = LoginInteractor()
         let router: PresenterToRouterProtocal = LoginRouter()
-
-        view?.presenter = presenter
-        presenter.view = view
+        let interactor: PresenterToInteractorProtocal = LoginInteractor()
+        loginRef.presenter = presenter
+        presenter.view = loginRef
         presenter.router = router
-        presenter.interactor = Interactor
-        Interactor.presenter = presenter
-        return view!
+        presenter.interactor = interactor
+        interactor.presenter = presenter
+        LoginConstant.userName = ""
+        LoginConstant.password = ""
+    }
+
+    static func createModule() -> UIViewController {
+        let loginView = mainStoryBoard.instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController
+//        let presenter: ViewToPresenterProtocal & InteractorToPresenterProtocal = LoginPresenter()
+//        let Interactor: PresenterToInteractorProtocal = LoginInteractor()
+//        let router: PresenterToRouterProtocal = LoginRouter()
+//        loginView?.presenter = presenter
+//        presenter.view = loginView
+//        presenter.router = router
+//        presenter.interactor = Interactor
+//        Interactor.presenter = presenter
+        return loginView!
     }
 
     static var mainStoryBoard: UIStoryboard {

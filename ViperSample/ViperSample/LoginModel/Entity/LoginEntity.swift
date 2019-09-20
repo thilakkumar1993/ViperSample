@@ -15,6 +15,65 @@ private let firstNames = "firstName"
 private let isVerifieds = "isVerified"
 private let lastNames = "lastName"
 private let phoneNumbers = "phoneNumber"
+private let messages = "message"
+private let results = "result"
+private let statusCodes = "statusCode"
+private let successs = "success"
+private let jwts = "jwt"
+private let resps = "resp"
+private let vs = "__v"
+private let profileImages = "profileImage"
+private let roles = "role"
+
+class BaseModel<T>: NSObject, Mappable where T: Mappable {
+    internal var message: String?
+    internal var statusCode: Int?
+    internal var success: Bool?
+    internal var result: T?
+
+    required init?(map: Map) {
+        super.init()
+        mapping(map: map)
+    }
+
+    func mapping(map: Map) {
+        message <- map[messages]
+        statusCode <- map[statusCodes]
+        success <- map[successs]
+        result <- map[results]
+    }
+}
+
+// class LoginResult:Mappable {
+//
+//    internal var message: String?
+//    internal var statusCode: Int?
+//    internal var success: Bool?
+//    internal var result: LoginData?
+//
+//    required init?(map: Map) {
+//        mapping(map: map)
+//    }
+//
+//     func mapping(map: Map) {
+//        message <- map[messages]
+//        statusCode <- map[statusCodes]
+//        success <- map[successs]
+//        result <- map[results]
+//    }
+// }
+class LoginData: Mappable {
+    internal var jwt: String?
+    internal var resp: LoginModel?
+    required init?(map: Map) {
+        mapping(map: map)
+    }
+
+    func mapping(map: Map) {
+        jwt <- map[jwts]
+        resp <- map[resps]
+    }
+}
 
 class LoginModel: Mappable {
     internal var id: String?
@@ -38,27 +97,3 @@ class LoginModel: Mappable {
         phoneNumber <- map[phoneNumbers]
     }
 }
-
-// {
-//    message = Authenticated;
-//    result =     {
-//        jwt = "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZDQxMzIyYzcyMTA1NDA2YjQ1NGRlMTciLCJpYXQiOjE1Njg3MjY3MTB9.3de0fzhQ459-EJC_BA_Hk8qlCnCOhKpbvbBIax_8DFY";
-//        resp =         {
-//            "__v" = 0;
-//            "_id" = 5d41322c72105406b454de17;
-//            date = "2019-04-29T11:59:17.156Z";
-//            email = "versionswift15@gmail.com";
-//            firstName = Thilak;
-//            isVerified = 0;
-//            lastName = "K S";
-//            phoneNumber = "<null>";
-//            profileImage = "<null>";
-//            role = user;
-//            type =             (
-//            native
-//            );
-//        };
-//    };
-//    statusCode = 200;
-//    success = 1;
-// }

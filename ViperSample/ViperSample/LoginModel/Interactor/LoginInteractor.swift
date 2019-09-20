@@ -10,41 +10,17 @@ import Alamofire
 import Foundation
 import ObjectMapper
 class LoginInteractor: PresenterToInteractorProtocal {
+    
     var presenter: InteractorToPresenterProtocal?
-
-    func fetchData() {
-        // "versionswift15@gmail.com"
-        // "test123"
-        print(LoginConstant.userName ?? "wri")
-        WebService.userLogin(userName: LoginConstant.userName ?? "versionswift15@gmail.com", password: LoginConstant.userName ?? "test123") { result, _, _ in
-            print(result ?? "")
-            if let resu = result as? NSDictionary {
-                let value = resu.value(forKey: "result") as? NSDictionary
-                let resp = value?.value(forKey: "resp")
-
-                let arrayObject = Mapper<LoginModel>().mapArray(JSONArray: [resp as! [String: Any]])
-                print(LoginConstant.userName ?? "wri")
-                self.presenter?.loginDetailFetched()
-                if let obj = arrayObject.first {
-                    self.presenter?.loginResultFetched(result: obj)
+    func fetchData(email: String, password: String) {
+        let parammeters = ["email": email, "password": password, "type": "native"]
+        WebService.userLogin(parameters: parammeters) { result, message, status in
+            if status {
+                if let response = result {
+                    self.presenter?.loginResultFetched(result: response)
                 }
-            }
-        }
-    }
-
-    func fetchLogin(login _: LoginConstant) {
-        print("")
-        print(LoginConstant.userName ?? "wri")
-        WebService.userLogin(userName: LoginConstant.userName ?? "", password: LoginConstant.password ?? "") { result, _, _ in
-            print(result ?? "")
-            if let resu = result as? NSDictionary {
-                let value = resu.value(forKey: "result") as? NSDictionary
-                let resp = value?.value(forKey: "resp")
-                let arrayObject = Mapper<LoginModel>().mapArray(JSONArray: [resp as! [String: Any]])
-
-                print(arrayObject[0].lastName ?? "")
-                self.presenter?.loginDetailFetched()
-                self.presenter?.loginResultFetched(result: arrayObject[0])
+            } else {
+                self.presenter?.loginFailed(message: message ?? "")
             }
         }
     }

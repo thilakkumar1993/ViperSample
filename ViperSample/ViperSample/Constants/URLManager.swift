@@ -9,5 +9,5 @@
 import Foundation
 
 class URLManager {
-    public static let loginUrl = "www.google.com"
+    public static let loginUrl = ""
 }

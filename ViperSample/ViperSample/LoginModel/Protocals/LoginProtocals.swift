@@ -12,28 +12,25 @@ protocol ViewToPresenterProtocal: class {
     var view: PresenterToViewProtocal? { get set }
     var interactor: PresenterToInteractorProtocal? { get set }
     var router: PresenterToRouterProtocal? { get set }
-    func updateView()
-//    func callLogin(login:LoginConstant)
+    func updateView(email: String, password: String)
 }
 
 protocol PresenterToInteractorProtocal: class {
     var presenter: InteractorToPresenterProtocal? { get set }
-    func fetchData()
-//    func fetchLogin(login:LoginConstant)
+    func fetchData(email: String, password: String)
 }
 
 protocol InteractorToPresenterProtocal: class {
-    func loginDetailFetched()
-    func loginFailed()
-    func loginResultFetched(result: LoginModel)
+    func loginFailed(message: String)
+    func loginResultFetched(result: LoginData)
 }
 
 protocol PresenterToViewProtocal: class {
-    func showData()
-    func showFailedData()
-    func showResult(result: LoginModel)
+    func showFailedData(message: String)
+    func showResult(result: LoginData)
 }
 
 protocol PresenterToRouterProtocal: class {
     static func createModule() -> UIViewController
+    static func createLoginModule(loginRef: LoginViewController)
 }

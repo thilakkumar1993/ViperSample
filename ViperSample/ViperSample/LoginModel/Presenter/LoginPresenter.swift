@@ -14,25 +14,17 @@ class LoginPresenter: ViewToPresenterProtocal {
 
     var router: PresenterToRouterProtocal?
 
-    func updateView() {
-        interactor?.fetchData()
+    func updateView(email: String, password: String) {
+        interactor?.fetchData(email: email, password: password)
     }
-
-//    func callLogin(login: LoginConstant) {
-//      //  interactor?.fetchLogin(login: login)
-//    }
 }
 
 extension LoginPresenter: InteractorToPresenterProtocal {
-    func loginResultFetched(result: LoginModel) {
+    func loginFailed(message: String) {
+        view?.showFailedData(message: message)
+    }
+
+    func loginResultFetched(result: LoginData) {
         view?.showResult(result: result)
-    }
-
-    func loginDetailFetched() {
-        view?.showData()
-    }
-
-    func loginFailed() {
-        view?.showFailedData()
     }
 }

@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		2822D4582330E60E006D747C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2822D4572330E60E006D747C /* AppDelegate.swift */; };
-		2822D45A2330E60E006D747C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2822D4592330E60E006D747C /* ViewController.swift */; };
 		2822D45D2330E60E006D747C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2822D45B2330E60E006D747C /* Main.storyboard */; };
 		2822D45F2330E60F006D747C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2822D45E2330E60F006D747C /* Assets.xcassets */; };
 		2822D4622330E60F006D747C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2822D4602330E60F006D747C /* LaunchScreen.storyboard */; };
@@ -20,6 +19,8 @@
 		2822D47D2330F6B2006D747C /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2822D47C2330F6B2006D747C /* Reachability.swift */; };
 		2822D480233103CC006D747C /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2822D47F233103CC006D747C /* LoginRouter.swift */; };
 		2822D4832331178F006D747C /* LoginEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2822D4822331178F006D747C /* LoginEntity.swift */; };
+		28434E6023338162005C975B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28434E5F23338162005C975B /* LoginViewController.swift */; };
+		28434E622333B7FD005C975B /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28434E612333B7FD005C975B /* SessionManager.swift */; };
 		2853F7362331FF3C00B43D41 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2853F7352331FF3C00B43D41 /* Constants.swift */; };
 		B7114F8757933675FD103791 /* Pods_ViperSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D555617825006DEB46220C1 /* Pods_ViperSample.framework */; };
 /* End PBXBuildFile section */
@@ -27,7 +28,6 @@
 /* Begin PBXFileReference section */
 		2822D4542330E60E006D747C /* ViperSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ViperSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2822D4572330E60E006D747C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2822D4592330E60E006D747C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2822D45C2330E60E006D747C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2822D45E2330E60F006D747C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2822D4612330E60F006D747C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -40,6 +40,8 @@
 		2822D47C2330F6B2006D747C /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		2822D47F233103CC006D747C /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
 		2822D4822331178F006D747C /* LoginEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEntity.swift; sourceTree = "<group>"; };
+		28434E5F23338162005C975B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		28434E612333B7FD005C975B /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 		2853F7352331FF3C00B43D41 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		2D555617825006DEB46220C1 /* Pods_ViperSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ViperSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		97B65C5EE6D6D63154F4CF2F /* Pods-ViperSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ViperSample.debug.xcconfig"; path = "Target Support Files/Pods-ViperSample/Pods-ViperSample.debug.xcconfig"; sourceTree = "<group>"; };
@@ -115,7 +117,7 @@
 		2822D46E2330EA2D006D747C /* View */ = {
 			isa = PBXGroup;
 			children = (
-				2822D4592330E60E006D747C /* ViewController.swift */,
+				28434E5F23338162005C975B /* LoginViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -150,6 +152,7 @@
 			children = (
 				2822D47C2330F6B2006D747C /* Reachability.swift */,
 				2822D47A2330F09A006D747C /* Webservice.swift */,
+				28434E612333B7FD005C975B /* SessionManager.swift */,
 			);
 			path = Webservice;
 			sourceTree = "<group>";
@@ -313,17 +316,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28434E6023338162005C975B /* LoginViewController.swift in Sources */,
 				2822D4832331178F006D747C /* LoginEntity.swift in Sources */,
 				2853F7362331FF3C00B43D41 /* Constants.swift in Sources */,
 				2822D4712330EB2A006D747C /* LoginPresenter.swift in Sources */,
 				2822D47B2330F09A006D747C /* Webservice.swift in Sources */,
 				2822D46D2330E6D9006D747C /* LoginProtocals.swift in Sources */,
-				2822D45A2330E60E006D747C /* ViewController.swift in Sources */,
 				2822D4752330EC02006D747C /* LoginInteractor.swift in Sources */,
 				2822D480233103CC006D747C /* LoginRouter.swift in Sources */,
 				2822D4582330E60E006D747C /* AppDelegate.swift in Sources */,
 				2822D47D2330F6B2006D747C /* Reachability.swift in Sources */,
 				2822D4782330EEE4006D747C /* URLManager.swift in Sources */,
+				28434E622333B7FD005C975B /* SessionManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -14,10 +14,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_: UIApplication, didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        let liveNews = LoginRouter.createModule()
-        window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = liveNews
-        window?.makeKeyAndVisible()
+//        let liveNews = LoginRouter.createModule()
+//        window = UIWindow(frame: UIScreen.main.bounds)
+//        window?.rootViewController = liveNews
+//        window?.makeKeyAndVisible()
         return true
     }
 
