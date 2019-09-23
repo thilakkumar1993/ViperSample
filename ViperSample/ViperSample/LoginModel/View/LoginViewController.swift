@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController,UINavigationControllerDelegate {
     var presenter: ViewToPresenterProtocal?
     var loginCon = LoginConstant()
     override func viewDidLoad() {
@@ -25,6 +25,6 @@ extension LoginViewController: PresenterToViewProtocal {
          print(result.resp?.firstName ?? "")
     }
     func showFailedData(message:String) {
-        print(message)
+        presenter?.showNextVC(message: message, views: self)
     }
 }

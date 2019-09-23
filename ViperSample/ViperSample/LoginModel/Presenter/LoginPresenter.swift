@@ -7,7 +7,12 @@
 //
 
 import Foundation
+import UIKit
 class LoginPresenter: ViewToPresenterProtocal {
+    
+    
+   
+    
     var view: PresenterToViewProtocal?
 
     var interactor: PresenterToInteractorProtocal?
@@ -17,6 +22,13 @@ class LoginPresenter: ViewToPresenterProtocal {
     func updateView(email: String, password: String) {
         interactor?.fetchData(email: email, password: password)
     }
+    func showNextVC(message: String, views: UIViewController) {
+        router?.pushTonextVC(message: message, views: views)
+    }
+//    func showNextVC(views: UIViewController) {
+//       router?.pushTonextVC(views: views)
+//    }
+    
 }
 
 extension LoginPresenter: InteractorToPresenterProtocal {

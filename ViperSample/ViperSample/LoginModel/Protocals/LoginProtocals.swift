@@ -13,6 +13,7 @@ protocol ViewToPresenterProtocal: class {
     var interactor: PresenterToInteractorProtocal? { get set }
     var router: PresenterToRouterProtocal? { get set }
     func updateView(email: String, password: String)
+    func showNextVC(message:String,views: UIViewController)
 }
 
 protocol PresenterToInteractorProtocal: class {
@@ -33,4 +34,5 @@ protocol PresenterToViewProtocal: class {
 protocol PresenterToRouterProtocal: class {
     static func createModule() -> UIViewController
     static func createLoginModule(loginRef: LoginViewController)
+    func pushTonextVC(message:String, views: UIViewController)
 }

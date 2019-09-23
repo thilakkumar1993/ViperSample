@@ -9,6 +9,15 @@
 import Foundation
 import UIKit
 class LoginRouter: PresenterToRouterProtocal {
+    
+    func pushTonextVC(message:String, views: UIViewController) {
+        let nextVC = views.storyboard?.instantiateViewController(withIdentifier: "SignUpViewController") as! SignUpViewController
+        print(message)
+        SignUpRouter.createSignUpModules(with: message, and: nextVC)
+        //views.present(nextVC, animated: true, completion: nil)
+        views.navigationController?.pushViewController(nextVC, animated: true)
+    }
+    
     static func createLoginModule(loginRef: LoginViewController) {
         let presenter: ViewToPresenterProtocal & InteractorToPresenterProtocal = LoginPresenter()
         let router: PresenterToRouterProtocal = LoginRouter()
@@ -20,8 +29,9 @@ class LoginRouter: PresenterToRouterProtocal {
         interactor.presenter = presenter
         LoginConstant.userName = ""
         LoginConstant.password = ""
+       // loginRef.view.backgroundColor = UIColor.blue
     }
-
+    
     static func createModule() -> UIViewController {
         let loginView = mainStoryBoard.instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController
 //        let presenter: ViewToPresenterProtocal & InteractorToPresenterProtocal = LoginPresenter()

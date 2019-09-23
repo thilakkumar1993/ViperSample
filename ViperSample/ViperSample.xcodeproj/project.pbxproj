@@ -22,6 +22,10 @@
 		28434E6023338162005C975B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28434E5F23338162005C975B /* LoginViewController.swift */; };
 		28434E622333B7FD005C975B /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28434E612333B7FD005C975B /* SessionManager.swift */; };
 		2853F7362331FF3C00B43D41 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2853F7352331FF3C00B43D41 /* Constants.swift */; };
+		28E7E6F82338D4E000237B26 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E7E6F72338D4E000237B26 /* SignUpViewController.swift */; };
+		28E7E6FF2338E78F00237B26 /* SignUpProtocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E7E6FE2338E78F00237B26 /* SignUpProtocal.swift */; };
+		28E7E7012338EA9B00237B26 /* SignUpPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E7E7002338EA9B00237B26 /* SignUpPresenter.swift */; };
+		28E7E7032338F21900237B26 /* SignUpRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E7E7022338F21900237B26 /* SignUpRouter.swift */; };
 		B7114F8757933675FD103791 /* Pods_ViperSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D555617825006DEB46220C1 /* Pods_ViperSample.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +47,10 @@
 		28434E5F23338162005C975B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		28434E612333B7FD005C975B /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 		2853F7352331FF3C00B43D41 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		28E7E6F72338D4E000237B26 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		28E7E6FE2338E78F00237B26 /* SignUpProtocal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpProtocal.swift; sourceTree = "<group>"; };
+		28E7E7002338EA9B00237B26 /* SignUpPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPresenter.swift; sourceTree = "<group>"; };
+		28E7E7022338F21900237B26 /* SignUpRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpRouter.swift; sourceTree = "<group>"; };
 		2D555617825006DEB46220C1 /* Pods_ViperSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ViperSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		97B65C5EE6D6D63154F4CF2F /* Pods-ViperSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ViperSample.debug.xcconfig"; path = "Target Support Files/Pods-ViperSample/Pods-ViperSample.debug.xcconfig"; sourceTree = "<group>"; };
 		A17B2790157DAFB3B0B19558 /* Pods-ViperSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ViperSample.release.xcconfig"; path = "Target Support Files/Pods-ViperSample/Pods-ViperSample.release.xcconfig"; sourceTree = "<group>"; };
@@ -81,6 +89,7 @@
 		2822D4562330E60E006D747C /* ViperSample */ = {
 			isa = PBXGroup;
 			children = (
+				28E7E6F52338D49300237B26 /* SignupModel */,
 				2822D4792330F044006D747C /* Webservice */,
 				2822D4762330EEB7006D747C /* Constants */,
 				2822D46A2330E642006D747C /* LoginModel */,
@@ -171,6 +180,65 @@
 				2822D4822331178F006D747C /* LoginEntity.swift */,
 			);
 			path = Entity;
+			sourceTree = "<group>";
+		};
+		28E7E6F52338D49300237B26 /* SignupModel */ = {
+			isa = PBXGroup;
+			children = (
+				28E7E6FD2338E67F00237B26 /* Protocals */,
+				28E7E6FC2338E67300237B26 /* Entity */,
+				28E7E6FB2338E65A00237B26 /* Interactor */,
+				28E7E6F92338D52300237B26 /* SignUpRouter */,
+				28E7E6FA2338E63800237B26 /* Presenter */,
+				28E7E6F62338D4B700237B26 /* SignUpView */,
+			);
+			path = SignupModel;
+			sourceTree = "<group>";
+		};
+		28E7E6F62338D4B700237B26 /* SignUpView */ = {
+			isa = PBXGroup;
+			children = (
+				28E7E6F72338D4E000237B26 /* SignUpViewController.swift */,
+			);
+			path = SignUpView;
+			sourceTree = "<group>";
+		};
+		28E7E6F92338D52300237B26 /* SignUpRouter */ = {
+			isa = PBXGroup;
+			children = (
+				28E7E7022338F21900237B26 /* SignUpRouter.swift */,
+			);
+			path = SignUpRouter;
+			sourceTree = "<group>";
+		};
+		28E7E6FA2338E63800237B26 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				28E7E7002338EA9B00237B26 /* SignUpPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		28E7E6FB2338E65A00237B26 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		28E7E6FC2338E67300237B26 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		28E7E6FD2338E67F00237B26 /* Protocals */ = {
+			isa = PBXGroup;
+			children = (
+				28E7E6FE2338E78F00237B26 /* SignUpProtocal.swift */,
+			);
+			path = Protocals;
 			sourceTree = "<group>";
 		};
 		66882E3E15AAE7EF672C6D20 /* Frameworks */ = {
@@ -319,6 +387,8 @@
 				28434E6023338162005C975B /* LoginViewController.swift in Sources */,
 				2822D4832331178F006D747C /* LoginEntity.swift in Sources */,
 				2853F7362331FF3C00B43D41 /* Constants.swift in Sources */,
+				28E7E7012338EA9B00237B26 /* SignUpPresenter.swift in Sources */,
+				28E7E7032338F21900237B26 /* SignUpRouter.swift in Sources */,
 				2822D4712330EB2A006D747C /* LoginPresenter.swift in Sources */,
 				2822D47B2330F09A006D747C /* Webservice.swift in Sources */,
 				2822D46D2330E6D9006D747C /* LoginProtocals.swift in Sources */,
@@ -327,7 +397,9 @@
 				2822D4582330E60E006D747C /* AppDelegate.swift in Sources */,
 				2822D47D2330F6B2006D747C /* Reachability.swift in Sources */,
 				2822D4782330EEE4006D747C /* URLManager.swift in Sources */,
+				28E7E6F82338D4E000237B26 /* SignUpViewController.swift in Sources */,
 				28434E622333B7FD005C975B /* SessionManager.swift in Sources */,
+				28E7E6FF2338E78F00237B26 /* SignUpProtocal.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
